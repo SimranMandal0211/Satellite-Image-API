@@ -47,4 +47,18 @@ function showPage(page){
     });
 }
 
+function updateButtons(photos) {
+    console.log(photos.length);
+    if (page === 1) {
+        prev.attr("disabled", "true");
+        next.removeAttr("disabled");
+    } else if (photos.length === 0) {
+        next.attr("disabled", "true");
+        prev.removeAttr("disabled");
+        --page;
+    } else {
+        prev.removeAttr("disabled");
+        next.removeAttr("disabled");        
+    }
+}
 
